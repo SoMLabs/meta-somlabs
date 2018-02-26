@@ -1,5 +1,8 @@
 This README file contains information on the contents of the
-SoMLABS layer.
+SoMLabs layer.
+
+This layer is a part of SoMLabs BSP:
+https://github.com/SoMLabs/somlabs-bsp
 
 Please see the corresponding sections below for details.
 
@@ -18,7 +21,7 @@ This layer depends on:
 Patches
 =======
 
-Please submit any patches against the SoMLABS layer to the
+Please submit any patches against the SoMLabs layer to the
 maintainer:
 
 Maintainer: Marcin Bis <marcin@bis-linux.com>

@@ -1,6 +1,6 @@
-# Copyright (C) 2018 SoMLABS
+# Copyright (C) 2018 SoMLabs
 
-DESCRIPTION = "i.MX U-Boot suppporting SomLABS boards."
+DESCRIPTION = "i.MX U-Boot suppporting SoMLabs boards."
 require recipes-bsp/u-boot/u-boot.inc
 
 PROVIDES += "u-boot"
