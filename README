@@ -1,9 +1,6 @@
 This README file contains information on the contents of the
 SoMLabs layer.
 
-This layer is a part of SoMLabs BSP:
-https://github.com/SoMLabs/somlabs-bsp
-
 Please see the corresponding sections below for details.
 
 Please see http://wiki.somlabs.com/index.php?title=VisionSOM-6ULL for a detailed configuration and build configuration.
@@ -21,10 +18,7 @@ This layer depends on:
 Patches
 =======
 
-Please submit any patches against the SoMLabs layer to the
-maintainer:
-
-Maintainer: Marcin Bis <marcin@bis-linux.com>
+Maintainer: Michal Wolowik <michwolo@gmail.com>
 
 Contents
 ========
@@ -32,4 +26,4 @@ Contents
 This layer contains:
  * visionsom6ull machine definition,
  * somlabs-linux - reference distro,
- * lab-image - reference image.
+ * console-image and qt5-image
