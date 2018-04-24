@@ -13,5 +13,5 @@ BBLAYERS ?= " \
   ${HOME}/yocto/poky/meta-openembedded/meta-python \
   ${HOME}/yocto/poky/meta-freescale \
   ${HOME}/yocto/poky/meta-qt5 \
-  ${HOME}/yocto/poky/meta-slabs \
+  ${HOME}/yocto/poky/meta-somlabs \
   "
