@@ -1,57 +1,68 @@
-SUMMARY = "A console image with wifi support application for SoMLabs Board"
+DESCRIPTION = "A console image with wifi support application for SoMLabs Board"
+LICENSE = "MIT"
 
 NETWORK_APP = " \
     openssh openssh-keygen openssh-sftp-server \
 "
 
-IMAGE_FEATURES += "debug-tweaks package-management"
-
-KERNEL_EXTRA_INSTALL = " \
-	kernel-devicetree \
-	kernel-modules \
-	firmware-imx-brcm \
- "
- 
-WIFI_SUPPORT = " \
-    crda \
-    iw \
-    network-config-misc \
-    iproute2 \
-    iproute2-tc \
-    wireless-tools \
-    wpa-supplicant \
-"
-
-UTILITIES_INSTALL = " \
-    gdb \
-    gdbserver \
-    coreutils \
-    i2c-tools \
-    mtd-utils \
-    tslib \
-    tslib-tests \
-    tslib-calibrate \
-    devmem2 \
-    cpufrequtils \
-    resize-rootfs \
-    ldd \
-    tzdata \
-    ppp \
-"
-
-CPP_LIB = " \
-    libstdc++ \
-"
-#Always add cmake to sdk
-TOOLCHAIN_HOST_TASK_append = " nativesdk-cmake"
-
-IMAGE_INSTALL = "${CORE_IMAGE_EXTRA_INSTALL} ${NETWORK_APP} ${UTILITIES_INSTALL} ${KERNEL_EXTRA_INSTALL} ${WIFI_SUPPORT}"
-
-IMAGE_LINGUAS = " "
-
-LICENSE = "MIT"
+IMAGE_LINGUAS = "pl-pl"
 
 inherit core-image
 
-IMAGE_ROOTFS_SIZE ?= "8192"
-IMAGE_ROOTFS_EXTRA_SPACE_append = "${@bb.utils.contains("DISTRO_FEATURES", "systemd", " + 4096", "" ,d)}"
+SYSTEM_TOOLS_INSTALL = " \
+    i2c-tools \
+    memtester \
+    sysbench \
+    tzdata \
+    devmem2 \
+    minicom \
+"
+
+KERNEL_EXTRA_INSTALL = " \
+    kernel-devicetree \
+    kernel-modules \
+    firmware-imx-brcm \
+ "
+
+UTILITIES_INSTALL = " \
+    coreutils \
+    gdbserver \
+    mtd-utils \
+    ldd \
+    libstdc++ \
+    libstdc++-dev \
+    openssh-sftp \
+    resize-rootfs \
+    ppp \
+"
+
+TSLIB = " \
+    tslib \
+    tslib-calibrate \
+    tslib-conf \
+    tslib-dev \
+    tslib-tests \
+"
+
+WIFI_SUPPORT = " \
+    crda \
+    iw \
+    wireless-tools \
+    wpa-supplicant \
+"
+ 
+IMAGE_INSTALL += " \
+  ${SYSTEM_TOOLS_INSTALL} \
+  ${UTILITIES_INSTALL} \
+  ${NETWORK_APP} \
+  ${WIFI_SUPPORT} \
+  ${KERNEL_EXTRA_INSTALL} \
+  ${TSLIB} \
+"
+
+#Always add cmake to sdk
+TOOLCHAIN_HOST_TASK_append = " nativesdk-cmake"
+
+DISTRO_FEATURES_remove = " x11 wayland opengl pulseaudio opengles egl xcb "
+PACKAGECONFIG_DISTRO_append_pn_qtbase = " linuxfb tslib "
+

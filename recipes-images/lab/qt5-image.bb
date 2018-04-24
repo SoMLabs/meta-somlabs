@@ -9,7 +9,6 @@ IMAGE_LINGUAS = "pl-pl"
 
 inherit core-image
 
-
 SYSTEM_TOOLS_INSTALL = " \
     i2c-tools \
     memtester \
@@ -92,6 +91,12 @@ IMAGE_INSTALL += " \
   ${KERNEL_EXTRA_INSTALL} \
   ${TSLIB} \
 "
+
+#Always add cmake to sdk
+TOOLCHAIN_HOST_TASK_append = " nativesdk-cmake"
+
+#Always add cmake to sdk
+TOOLCHAIN_HOST_TASK_append = " nativesdk-cmake"
 
 DISTRO_FEATURES_remove = " x11 wayland opengl pulseaudio opengles egl xcb "
 PACKAGECONFIG_DISTRO_append_pn_qtbase = " linuxfb tslib "
