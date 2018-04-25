@@ -50,7 +50,7 @@ MACHINE ??= "visionsom6ull"
 #
 # The default is a downloads directory under TOPDIR which is the build directory.
 #
-DL_DIR = "${HOME}/yocto/build/downloads"
+DL_DIR = "${HOME}/yocto/downloads"
 
 #
 # Where to place shared-state files
@@ -66,7 +66,7 @@ DL_DIR = "${HOME}/yocto/build/downloads"
 #
 # The default is a sstate-cache directory under TOPDIR.
 #
-SSTATE_DIR ?= "${HOME}/yocto/build/sstate-cache"
+SSTATE_DIR ?= "${HOME}/yocto/sstate-cache"
 
 #
 # Where to place the build output
@@ -78,7 +78,7 @@ SSTATE_DIR ?= "${HOME}/yocto/build/sstate-cache"
 #
 # The default is a tmp directory under TOPDIR.
 #
-TMPDIR = "${HOME}/yocto/build/tmp"
+TMPDIR = "${HOME}/yocto/tmp"
 
 #
 # Default policy config
