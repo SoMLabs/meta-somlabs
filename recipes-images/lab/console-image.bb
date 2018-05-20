@@ -47,8 +47,18 @@ TSLIB = " \
 WIFI_SUPPORT = " \
     crda \
     iw \
+    linux-firmware-rtl8192ce \
+    linux-firmware-rtl8192cu \
+    linux-firmware-rtl8192su \
+    linux-firmware-ralink \
     wireless-tools \
     wpa-supplicant \
+    bluez5 \
+    wpa-supplicant-passphrase \
+    wpa-supplicant-cli \
+    network-config-misc \
+    iproute2 \
+    iproute2-tc \
 "
  
 IMAGE_INSTALL += " \

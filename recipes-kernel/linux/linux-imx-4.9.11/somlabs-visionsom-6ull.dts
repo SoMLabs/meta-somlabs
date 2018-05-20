@@ -44,7 +44,7 @@
 				gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
 				linux,default-trigger = "heartbeat";
 		};
-	  
+
 		usr1 {
 				label = "usr1";
 				gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
@@ -61,7 +61,7 @@
 				label = "usr3";
 				gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
 		};
-			
+
 	};
 
 /*
@@ -144,7 +144,7 @@
 		/*gpios = <&gpio2 17 0>; //wifi_wake_host*/
 		wlreg_on-supply = <&wlreg_on>;
 	};
-	
+
 };
 
 &cpu0 {
@@ -163,7 +163,7 @@
 	phy-mode = "rmii";
 	phy-handle = <&ethphy0>;
 	status = "okay";
-	
+
 	mdio {
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -173,7 +173,7 @@
 			reg = <1>;
 		};
 	};
-	
+
 };
 
 &gpc {
@@ -432,7 +432,7 @@
 				MX6UL_PAD_NAND_DATA07__USDHC2_DATA7 0x170f9
 			>;
 		};
-		
+
 		pinctrl_gpmi_nand_1: gpmi-nand-1 {
 			fsl,pins = <
 				MX6UL_PAD_NAND_CLE__RAWNAND_CLE         0xb0b1
@@ -498,14 +498,14 @@
 		display-timings {
 			native-mode = <&timing0>;
 			timing0: timing0 {
-			clock-frequency = <9200000>;
-			hactive = <480>;
-			vactive = <272>;
-			hfront-porch = <8>;
-			hback-porch = <4>;
-			hsync-len = <41>;
-			vback-porch = <2>;
-			vfront-porch = <4>;
+			clock-frequency = <33300000>;
+			hactive = <800>;
+			vactive = <480>;
+			hfront-porch = <210>;
+			hback-porch = <46>;
+			hsync-len = <20>;
+			vback-porch = <23>;
+			vfront-porch = <22>;
 			vsync-len = <10>;
 
 			hsync-active = <0>;
@@ -625,4 +625,3 @@
 	status = "disabled";
 	nand-on-flash-bbt;
 };
-
