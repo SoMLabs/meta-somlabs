@@ -9,6 +9,10 @@ IMAGE_LINGUAS = "pl-pl"
 
 inherit core-image
 
+IMAGE_FEATURES += " \
+    splash \
+"
+
 SYSTEM_TOOLS_INSTALL = " \
     i2c-tools \
     memtester \

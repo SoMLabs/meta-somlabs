@@ -196,7 +196,20 @@
 	clock_frequency = <100000>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_i2c2>;
-	//status = "okay";
+	status = "okay";
+
+	polytouch: edt-ft5406@38 {
+			status = "okay";
+			compatible = "edt,edt-ft5406", "edt,edt-ft5x06";
+			pinctrl-names = "default";
+			pinctrl-0 = <&edt_ft5406_ts_pins_default>;
+
+			reg = <0x38>;
+			interrupt-parent = <&gpio1>;
+			interrupts = <2 IRQ_TYPE_EDGE_FALLING>;
+			touchscreen-size-x = <800>;
+			touchscreen-size-y = <480>;
+	};
 };
 
 &iomuxc {
@@ -217,6 +230,12 @@
 				*/
 			>;
 		};
+
+		edt_ft5406_ts_pins_default: tsgrp {
+			fsl,pins = <
+				MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0x1b0b0
+		>;
+	};
 
 		pinctrl_enet1: enet1grp {
 			fsl,pins = <
@@ -307,14 +326,14 @@
 			>;
 		};
 
-		pinctrl_tsc: tscgrp {
-			fsl,pins = <
-				MX6UL_PAD_GPIO1_IO01__GPIO1_IO01	0xb0
-				MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0xb0
-				MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0xb0
-				MX6UL_PAD_GPIO1_IO04__GPIO1_IO04	0xb0
-			>;
-		};
+	/*	pinctrl_tsc: tscgrp { */
+	/*		fsl,pins = < */
+	/*			MX6UL_PAD_GPIO1_IO01__GPIO1_IO01	0xb0 */
+	/*			MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0xb0 */
+	/*			MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0xb0 */
+	/*			MX6UL_PAD_GPIO1_IO04__GPIO1_IO04	0xb0 */
+	/*		>; */
+/*		}; */
 
 		pinctrl_uart1: uart1grp {
 			fsl,pins = <
@@ -543,14 +562,14 @@
 	};
 };
 
-&tsc {
+/* &tsc {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_tsc>;
 	xnur-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
 	measure-delay-time = <0xffff>;
 	pre-charge-time = <0xfff>;
 	status = "okay";
-};
+}; */
 
 &uart1 {
 	pinctrl-names = "default";

@@ -1,6 +1,7 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${BP}:"
 
 SRC_URI += "\
+	file://0001-kernel-logo-change.patch \
 	file://somlabs-visionsom-6ul.dts \
 	file://somlabs-visionsom-6ul-emmc.dts \
 	file://somlabs-visionsom-6ul-nand.dts \
