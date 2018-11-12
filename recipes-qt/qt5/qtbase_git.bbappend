@@ -1,2 +1,2 @@
-PACKAGECONFIG_append = " accessibility fontconfig linuxfb egl tslib opengl es2"
+PACKAGECONFIG_append = "accessibility fontconfig linuxfb tslib"
 PACKAGECONFIG_remove = "examples tests"
