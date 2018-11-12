@@ -83,7 +83,7 @@ WIFI_SUPPORT = " \
     wireless-tools \
     wpa-supplicant \
 "
- 
+
 IMAGE_INSTALL += " \
   ${DEV_TOOLS_INSTALL} \
   ${SYSTEM_TOOLS_INSTALL} \
@@ -106,3 +106,7 @@ DISTRO_FEATURES_remove = " x11 wayland opengl pulseaudio opengles egl xcb "
 PACKAGECONFIG_DISTRO_append_pn_qtbase = " linuxfb tslib "
 IMAGE_INSTALL_append = " qtbase qtbase-plugins "
 
+DISTRO_FEATURES_remove = " x11 wayland opengl pulseaudio opengles egl xcb "
+# PACKAGECONFIG_DISTRO_append_pn_qtbase = " linuxfb tslib "
+# IMAGE_INSTALL_append = " qtbase qtbase-plugins "
+# CORE_IMAGE_EXTRA_INSTALL = "python-core python-pip"
