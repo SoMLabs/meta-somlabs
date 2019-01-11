@@ -17,7 +17,7 @@ PROVIDES += "u-boot"
 
 UBOOT_LOCALVERSION = "-somlabs"
 
-SRCREV = "ec39701414aebe44792fc0d35d06c922c0da2e11"
+SRCREV = "ae57ffcbf8b3ead304374348a0809c78ef7d23bd"
 SRC_URI = "git://github.com/SoMLabs/somlabs-uboot-imx.git;branch=${PV};protocol=git"
 
 S = "${WORKDIR}/git"
