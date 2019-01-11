@@ -1,6 +1,8 @@
 DESCRIPTION = "A console image with wifi support application for SoMLabs Board"
 LICENSE = "MIT"
 
+IMAGE_FEATURES += "package-management ssh-server-openssh"
+
 NETWORK_APP = " \
     openssh openssh-keygen openssh-sftp-server \
 "
@@ -21,7 +23,7 @@ SYSTEM_TOOLS_INSTALL = " \
 KERNEL_EXTRA_INSTALL = " \
     kernel-devicetree \
     kernel-modules \
-    firmware-imx-brcm \
+    murata-fwmac-fw \
  "
 
 UTILITIES_INSTALL = " \
@@ -34,6 +36,8 @@ UTILITIES_INSTALL = " \
     openssh-sftp \
     resize-rootfs \
     ppp \
+    rng-tools \
+    util-linux \
 "
 
 TSLIB = " \
