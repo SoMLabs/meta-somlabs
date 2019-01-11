@@ -14,12 +14,14 @@ PROVIDES += "u-boot"
 
 UBOOT_LOCALVERSION = "-somlabs"
 
-SRCREV = "a046f68800bcd70699eccc185ebe4b3d43d42ff7"
-SRC_URI = "git://github.com/SoMLabs/somlabs-uboot-imx.git;branch=${PV};protocol=git"
+SRCREV = "2b9de64f7876357840fb1471dc10eea5fffb9b9a"
+SRC_URI = "git://github.com/marcinbis/somlabs-uboot-imx.git;branch=${PV};protocol=git"
 
 S = "${WORKDIR}/git"
 
 inherit fsl-u-boot-localversion
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-COMPATIBLE_MACHINE = "(mx6|mx7)"
+COMPATIBLE_MACHINE = "(mx6|mx7|use-mainline-bsp)"
+
+DEPENDS += "bison-native"
