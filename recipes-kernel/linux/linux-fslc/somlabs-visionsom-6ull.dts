@@ -100,6 +100,7 @@
 			gpio = <&gpio1 5 0>;
 			startup-delay-us = <100>;
 			enable-active-high;
+			regulator-always-on;
 		};
 /*
 		btreg_on: fixedregulator@101 {
@@ -218,7 +219,7 @@
 	imx6ul-evk {
 		pinctrl_hog_1: hoggrp-1 {
 			fsl,pins = <
-				MX6UL_PAD_JTAG_TCK__REF_CLK_32K		0x17099	/* 0x4001b031*/	/* 32kHz low power clock reference clock for WiFi*/
+				MX6UL_PAD_JTAG_TCK__OSC32K_32K_OUT	0x17099	/* 0x4001b031*/	/* 32kHz low power clock reference clock for WiFi*/
 
 				MX6UL_PAD_JTAG_MOD__GPIO1_IO10		0x17099	/* LED 0 */
 				MX6UL_PAD_JTAG_TMS__GPIO1_IO11		0x17099	/* LED 1 */
@@ -542,9 +543,11 @@
 	status = "okay";
 };
 
+/*
 &pxp {
 	status = "okay";
 };
+*/
 
 &qspi {
 	pinctrl-names = "default";
