@@ -1,7 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += "\
-  file://0001-kernel-logo-change.patch \
+	file://0001-kernel-logo-change.patch \
+	file://imx6ul_imx6ull_pxp.patch \
 	file://somlabs-visionsom-6ul.dts \
 	file://somlabs-visionsom-6ul-emmc.dts \
 	file://somlabs-visionsom-6ul-nand.dts \

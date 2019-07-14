@@ -543,11 +543,9 @@
 	status = "okay";
 };
 
-/*
 &pxp {
 	status = "okay";
 };
-*/
 
 &qspi {
 	pinctrl-names = "default";
