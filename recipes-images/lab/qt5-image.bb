@@ -41,6 +41,8 @@ QT_DEV_TOOLS = " \
     qtbase-tools \
     qtserialport-dev \
     qtserialport-mkspecs \
+    qtmultimedia \
+    qtquickcontrols \
 "
 
 KERNEL_EXTRA_INSTALL = " \
