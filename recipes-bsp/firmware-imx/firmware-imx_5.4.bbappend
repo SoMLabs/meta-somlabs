@@ -1,2 +1,2 @@
 #BRCM firmware git - tested version
-SRCREV = "6bb12724d358092452fc8cc1e358f0710b49cfc5"
+SRCREV = "f6d0859f9435796f03ae93b70b5f92f4406bc56d"
